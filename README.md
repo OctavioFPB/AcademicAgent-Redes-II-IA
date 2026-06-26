@@ -25,7 +25,7 @@ Neste contexto, entra o AcademicAgent como um auxiliador de estudos, neste conte
 - Sentence Transformers: Geração de embeddings
 - Python 3.10+: Linguagem de programação
 
---
+-----
 
 - Tools Disponíveis:
      - O sistema conta com uma ferramenta principal chamada buscar_documentos_redes. Ela é acionada exclusivamente pelo Agente Pesquisador e tem a função de receber uma string de busca (query), consultar o banco de dados vetorial local e retornar os trechos de texto mais relevantes (top-K) que contêm o jargão técnico necessário para responder à dúvida do usuário.
