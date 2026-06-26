@@ -9,8 +9,9 @@
 --- 
 ## Descrição do Problema 
 
-"Um aluno se depara com um prova de redes II com prazo próximo, sem muito tempo, ele precisa estudar todo o conteúdo da matéria de uma forma rápida e eficiente"
-Neste contexto, entra o AcademicAgent como auxiliador de estudos (que neste contexto abrange apenas a matéria de redes II) que ajudara os usuários a revisar o conteudo, a corrigir e criar questões a fim de prepara-lo para a prova.
+"Um aluno se depara com um prova de redes II com prazo próximo, sem muito tempo, ele precisa estudar todo o conteúdo da matéria de uma forma rápida e eficiente."
+
+Neste contexto, entra o AcademicAgent como um auxiliador de estudos, neste contexto abrangendo a matéria de redes, que ajudará os usuários a revisar o conteudo com a finalidade de se preparar para prova, corrigindo e criando questões de estudo, respondendo à perguntas.
 
 ---
 
