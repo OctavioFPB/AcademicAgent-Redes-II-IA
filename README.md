@@ -58,5 +58,34 @@ Com o ambiente ativado, execute o comando abaixo. Ele instala exatamente as vers
 
 7. Execute a Ingestão para Fomentar a Base de conhecimento
 No terminal, com o ambiente ainda ativado, rode:
+
+---
+
+## 🎯 Exemplos de Execução
+
+```
+==================================================
+
+Qual a sua dúvida de Redes?
+> Se o servidor DNS parar, o que acontece com a empresa?
+
+[Agente Recuperador] Buscando materiais na base de Redes II...
+[Agente Redator] Escrevendo a explicação...
+[Agente Revisor] Avaliando a qualidade da resposta...
+
+==================================================
+RESPOSTA FINAL:
+Excelente pergunta!
+
+Se o servidor DNS parar, a empresa pode enfrentar graves problemas para manter sua infraestrutura online. Aqui estão algumas consequências:
+
+1. **Impossibilidade de acesso**: Sem um servidor DNS funcionando corretamente, os usuários não poderão mais acessar os sites da empresa ou seus serviços online.
+2. **Desenvolvimento de erros**: Os aplicativos e sistemas que dependem do DNS para resolver nomes de domínios começarão a apresentar erros e falhas, o que pode levar à perda de dados e tempo de inatividade.
+3. **Problemas de comunicação**: A impossibilidade de resolução de nomes de domínios impede a comunicação entre os servidores da empresa e seus clientes, levando a problemas de entrega de emails, mensagens instantâneas e outros serviços online.
+4. **Perda de reputação**: Uma falha prolongada no servidor DNS pode levar à perda de confiança dos clientes e parceiros, o que pode afetar negativamente a imagem da empresa.
+
+Para minimizar esses riscos, é fundamental implementar estratégias de backup e recuperação para garantir a continuidade do serviço DNS. Isso pode incluir a manutenção de servidores DNS redundantes, a configuração de caching e a realização de backups regulares dos dados do servidor DNS. Além disso, é importante ter um plano de contingência em caso de falha para minimizar os danos e garantir a recuperação rápida do serviço.
+==================================================
+```
 ```python ingestao.py```
 
