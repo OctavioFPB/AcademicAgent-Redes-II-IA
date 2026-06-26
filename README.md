@@ -1,14 +1,14 @@
 # Multi-Agentes IA Acadêmico - Especialistas em Redes 
 
 ## Sumário
-👥  [Integrantes]()
-📐  [Descrição do Problema & Objetivo da Solução]()
-✔️​  [Requisitos]()
-🧪  [Instruções de compilação/execução.]()
-🛠️  [Especificações Técnicas do Projeto e Arquitetura:]()
-🤖  [Papéis dos Agentes na Arquitetura]()
-📜  [Justificativa: Por que esta arquitetura é superior a um Agente Único?]()
-🎯  [Exemplos de Execução]()
+- 👥  [Integrantes](https://github.com/OctavioFPB/AcademicAgent-Redes-II-IA/blob/main/README.md#-integrantes)
+- 📐  [Descrição do Problema & Objetivo da Solução]()
+- ✔️​  [Requisitos]()
+- 🧪  [Instruções de compilação/execução.]()
+- 🛠️  [Especificações Técnicas do Projeto e Arquitetura:]()
+- 🤖  [Papéis dos Agentes na Arquitetura]()
+- 📜  [Justificativa: Por que esta arquitetura é superior a um Agente Único?]()
+- 🎯  [Exemplos de Execução]()
 
 ## 👥 Integrantes
 - Artur Mesquita Jeager (188354)
