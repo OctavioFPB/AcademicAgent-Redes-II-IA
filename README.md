@@ -33,6 +33,9 @@ AcademicAgent possui 3 agentes:
 * 3.Revisor: responsável por revisar o conteudo do professor para conseratar imprecições e garantir a qualidadee acuricidade da explicação.
 
 ---
+ss
+
+---
 
 ## ✔️​ Requisitos
 - Hardware: Pelo menos 8GB de RAM (recomendado 16GB para rodar o modelo LLaMA localmente com folga).
