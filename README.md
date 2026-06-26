@@ -16,45 +16,6 @@ Neste contexto, entra o AcademicAgent como um auxiliador de estudos, neste conte
 
 ---
 
-## ⚙️ Especificações Técnicas do Projeto e Arquitetura:
-
-- LangChain: Framework para aplicações com LLMs
-- LangGraph: Orquestração de agentes
-- Ollama: Execução local de modelos LLaMA
-- ChromaDB: Banco de dados vetorial
-- Sentence Transformers: Geração de embeddings
-- Python 3.10+: Linguagem de programação
-
------
-
-- Tools Disponíveis:
-     - O sistema conta com uma ferramenta principal chamada buscar_documentos_redes. Ela é acionada exclusivamente pelo Agente Pesquisador e tem a função de receber uma string de busca (query), consultar o banco de dados vetorial local e retornar os trechos de texto mais relevantes (top-K) que contêm o jargão técnico necessário para responder à dúvida do usuário.
-
-- Explicação de como o MCP foi utilizado:
-     - Para padronizar o acesso a recursos externos, implementamos o Model Context Protocol (MCP) através de uma classe adaptadora local (AdaptadorMCP). O Agente Pesquisador não acessa o banco vetorial diretamente; em vez disso, ele envia uma requisição no formato padrão JSON-RPC 2.0 (método tools/call) para o adaptador. O adaptador executa a tool e devolve os dados formatados na árvore de resposta oficial do MCP (result -> content -> text), garantindo desacoplamento e segurança na execução da ferramenta.
-
-- Explicação da estratégia de RAG (Retrieval-Augmented Generation):
-     - A estratégia de RAG foi dividida em duas etapas para evitar alucinações. Primeiro, quando o usuário faz uma pergunta, o Agente Pesquisador faz a recuperação (Retrieval) extraindo os dados técnicos brutos do banco vetorial, gerando um "Dossiê Técnico". Em seguida, ocorre a geração aumentada (Augmented Generation), onde o Agente Professor recebe apenas esse dossiê como contexto (sem acesso à base total ou a pesquisas web) e traduz o conteúdo para uma linguagem didática e formatada para o aluno.
-
-- Origem e natureza da base de conhecimento utilizada:
-     - A base de conhecimento é composta por materiais didáticos em formato PDF da disciplina de Redes de Computadores II. A natureza dos dados é estritamente acadêmica e técnica, cobrindo tópicos fundamentais da ementa, como: Arquitetura TCP/IP, DNS, Sockets, Protocolos UDP e TCP, Roteamento IP, ICMP e Cálculo de Sub-redes.
-
-- Tecnologia de embeddings e armazenamento vetorial adotados: 
-           - Embeddings: Utilizamos a biblioteca Sentence Transformers integrada via HuggingFaceEmbeddings, rodando o modelo leve e eficiente all-MiniLM-L6-v2. Ele converte os trechos de texto dos PDFs em vetores matemáticos com excelente captura de semântica.
-           - Armazenamento Vetorial: Adotamos o ChromaDB, executado de forma local e persistente. Ele armazena os embeddings e realiza a busca de contexto em frações de segundo utilizando o cálculo de similaridade de cosseno.
-
-- Dependências do Projeto:
-     - Para replicar e rodar o projeto localmente, as seguintes tecnologias e bibliotecas são exigidas:
-          - Core: Python (3.10 ou superior) e Ollama (com o modelo llama3 baixado localmente).
-          - Bibliotecas Python (Instaláveis via pip):
-                - ```langgraph``` (Orquestração de agentes)
-                - ```langchain``` e ```langchain-ollama``` (Integração com LLM)
-                - ```langchain-chroma``` e ```chromadb``` (Banco vetorial local)
-                - ```langchain-huggingface``` e ```sentence-transformers``` (Geração de embeddings locais)
-                - ```pypdf``` (Leitura e extração de texto dos PDFs originais)
-           
----
-
 ## ✔️​ Requisitos
 - Hardware: Pelo menos 8GB de RAM (recomendado 16GB para rodar o modelo LLaMA localmente com folga).
 - Python: Versão 3.10, 3.11 ou 3.12 instalada (evite a versão 3.13 recém-lançada, pois muitas bibliotecas de IA ainda não são totalmente compatíveis).
@@ -92,10 +53,51 @@ No terminal, com o ambiente ainda ativado, rode: ```python ingestao.py```
 
 ---
 
+## ⚙️ Especificações Técnicas do Projeto e Arquitetura:
+
+- LangChain: Framework para aplicações com LLMs
+- LangGraph: Orquestração de agentes
+- Ollama: Execução local de modelos LLaMA
+- ChromaDB: Banco de dados vetorial
+- Sentence Transformers: Geração de embeddings
+- Python 3.10+: Linguagem de programação
+
+-----
+
+- Tools Disponíveis:
+     - O sistema conta com uma ferramenta principal chamada buscar_documentos_redes. Ela é acionada exclusivamente pelo Agente Pesquisador e tem a função de receber uma string de busca (query), consultar o banco de dados vetorial local e retornar os trechos de texto mais relevantes (top-K) que contêm o jargão técnico necessário para responder à dúvida do usuário.
+
+- Explicação de como o MCP foi utilizado:
+     - Para padronizar o acesso a recursos externos, implementamos o Model Context Protocol (MCP) através de uma classe adaptadora local (AdaptadorMCP). O Agente Pesquisador não acessa o banco vetorial diretamente; em vez disso, ele envia uma requisição no formato padrão JSON-RPC 2.0 (método tools/call) para o adaptador. O adaptador executa a tool e devolve os dados formatados na árvore de resposta oficial do MCP (result -> content -> text), garantindo desacoplamento e segurança na execução da ferramenta.
+
+- Explicação da estratégia de RAG (Retrieval-Augmented Generation):
+     - A estratégia de RAG foi dividida em duas etapas para evitar alucinações. Primeiro, quando o usuário faz uma pergunta, o Agente Pesquisador faz a recuperação (Retrieval) extraindo os dados técnicos brutos do banco vetorial, gerando um "Dossiê Técnico". Em seguida, ocorre a geração aumentada (Augmented Generation), onde o Agente Professor recebe apenas esse dossiê como contexto (sem acesso à base total ou a pesquisas web) e traduz o conteúdo para uma linguagem didática e formatada para o aluno.
+
+- Origem e natureza da base de conhecimento utilizada:
+     - A base de conhecimento é composta por materiais didáticos em formato PDF da disciplina de Redes de Computadores II. A natureza dos dados é estritamente acadêmica e técnica, cobrindo tópicos fundamentais da ementa, como: Arquitetura TCP/IP, DNS, Sockets, Protocolos UDP e TCP, Roteamento IP, ICMP e Cálculo de Sub-redes.
+
+- Tecnologia de embeddings e armazenamento vetorial adotados: 
+           - Embeddings: Utilizamos a biblioteca Sentence Transformers integrada via HuggingFaceEmbeddings, rodando o modelo leve e eficiente all-MiniLM-L6-v2. Ele converte os trechos de texto dos PDFs em vetores matemáticos com excelente captura de semântica.
+           - Armazenamento Vetorial: Adotamos o ChromaDB, executado de forma local e persistente. Ele armazena os embeddings e realiza a busca de contexto em frações de segundo utilizando o cálculo de similaridade de cosseno.
+
+- Dependências do Projeto:
+     - Para replicar e rodar o projeto localmente, as seguintes tecnologias e bibliotecas são exigidas:
+          - Core: Python (3.10 ou superior) e Ollama (com o modelo llama3 baixado localmente).
+          - Bibliotecas Python (Instaláveis via pip):
+                - ```langgraph``` (Orquestração de agentes)
+                - ```langchain``` e ```langchain-ollama``` (Integração com LLM)
+                - ```langchain-chroma``` e ```chromadb``` (Banco vetorial local)
+                - ```langchain-huggingface``` e ```sentence-transformers``` (Geração de embeddings locais)
+                - ```pypdf``` (Leitura e extração de texto dos PDFs originais)
+ 
+---
+
 ## 🤖 Papéis dos Agentes na Arquitetura
 - __Agente 1__ (Pesquisador): Atua como o especialista em recuperação de informações. Ao receber a dúvida do aluno, ele não acessa o banco de dados de forma engessada; em vez disso, utiliza o MCP (Model Context Protocol) para acionar a ferramenta externa de busca na base vetorial (ChromaDB). Com o retorno padronizado, ele lê os trechos dos PDFs da disciplina de Redes de Computadores, extrai apenas os dados mais densos e técnicos, e compila um "Dossiê Técnico".
 - __Agente 2__ (Professor): Ele não tem acesso direto aos PDFs nem às ferramentas de busca. Ele recebe exclusivamente o "Dossiê Técnico" formulado pelo Pesquisador e tem a função de traduzir aquele jargão bruto para uma explicação didática, fluida e com exemplos práticos para o aluno.
 - __Agente 3__ (Revisor): Atua como o coordenador de qualidade (Quality Assurance) do sistema. Ele recebe a dúvida original do aluno e a resposta elaborada pelo Professor. Sua função é realizar uma avaliação crítica binária: se a resposta estiver clara, correta e livre de alucinações, ele a APROVA para o usuário final. Caso identifique falhas, jargões excessivos ou respostas incompletas, ele REJEITA o texto, forçando o Agente Professor a reescrever a explicação (com um limite de segurança de 3 tentativas para evitar loops infinitos).
+
+---
 
 ## 📜 Justificativa: Por que esta arquitetura é superior a um Agente Único?
 
