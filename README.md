@@ -59,8 +59,9 @@ Executar esses dois comando ```$env:CURL_CA_BUNDLE=""``` e ```$env:REQUESTS_CA_B
 
 1. No terminal, com o ambiente ainda ativado, executar o arquivo "ingestao.py" para Fomentar a base de conhecimento dos agentes, rode ```python ingestao.py```
 
-2. Após conclusão, ainda no terminal, vamos ativar os agentes e utiliza-los, vamos executar o arquivo "assistente.py", rode ```python assistente.py```
-
+2. Após conclusão, ainda no terminal, vamos ativar os agentes e utiliza-los, vamos executar o arquivo "assistente.py", rode ```python assistente.py```.
+       - Caso ocorra algum erro, no seu terminal (com o (venv) ativado, exatamente onde você está), rode o seguinte comando para baixar a biblioteca: ```pip install langchain-ollama```
+   
 ---
 
 ## 🛠️ Especificações Técnicas do Projeto e Arquitetura:
