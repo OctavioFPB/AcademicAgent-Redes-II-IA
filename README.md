@@ -71,14 +71,16 @@ Executar esses dois comando ```$env:CURL_CA_BUNDLE=""``` e ```$env:REQUESTS_CA_B
 
 ## 🛠️ Especificações Técnicas do Projeto e Arquitetura:
 
-- LangChain: Framework para aplicações com LLMs
-- LangGraph: Orquestração de agentes
-- Ollama: Execução local de modelos LLaMA
-- ChromaDB: Banco de dados vetorial
-- Sentence Transformers: Geração de embeddings
-- Python 3.10+: Linguagem de programação
+- LangChain: Framework principal para integração e abstração de ferramentas do LLM.
+- LangGraph: Framework de orquestração de fluxo para a arquitetura multiagente.
+- Ollama (Llama 3): Motor de inferência para execução local e privada do modelo fundacional Llama 3 (8B).
+- ChromaDB: Banco de dados vetorial local e persistente para recuperação de contexto (RAG).
+- Sentence Transformers: Gerador dos embeddings (modelo all-MiniLM-L6-v2) para vetorização matemática dos textos.
+- PyPDF: Ferramenta de processamento de documentos para extração dos dados brutos da base de conhecimento.
+- MCP (Model Context Protocol): Padrão arquitetural (via JSON-RPC) utilizado para desacoplar e padronizar a comunicação entre os agentes e as ferramentas de busca.
+- Python 3.10+: Linguagem base de desenvolvimento.
 
------
+------
 
 - Tools Disponíveis:
      - O sistema conta com uma ferramenta principal chamada buscar_documentos_redes. Ela é acionada exclusivamente pelo Agente Pesquisador e tem a função de receber uma string de busca (query), consultar o banco de dados vetorial local e retornar os trechos de texto mais relevantes (top-K) que contêm o jargão técnico necessário para responder à dúvida do usuário.
