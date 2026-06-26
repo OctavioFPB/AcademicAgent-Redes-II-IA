@@ -48,7 +48,7 @@ Com o ambiente ativado, execute o comando abaixo. Ele instala exatamente as vers
 
 ```pip install langchain langchain-community langchain-huggingface langchain-chroma pypdf sentence-transformers chromadb langgraph```
 
-### 7. Execute a Ingestão para Fomentar a Base de conhecimento
+### 5. Execute a Ingestão para Fomentar a Base de conhecimento
 No terminal, com o ambiente ainda ativado, rode: ```python ingestao.py```
 
 ---
