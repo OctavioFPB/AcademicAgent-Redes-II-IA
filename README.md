@@ -29,8 +29,8 @@ Neste contexto, entra o AcademicAgent como auxiliador de estudos (que neste cont
 Baixe o instalador no site oficial (ollama.com). Após instalar, abra o terminal e faça o download do modelo que será o cérebro dos seus agentes:
 ```ollama pull llama3```
 
-### 📂 2. Crie a Estrutura de Pastas
-Crie/baixe a pasta principal do trabalho final. Abra o terminal dentro dessa nova pasta.
+### 📂 2. Estrutura de Pastas
+Baixe a pasta principal do trabalho final anexada no repositório. Abra o terminal dentro dessa nova pasta.
 
 ### 👾 3. Crie e Ative o Ambiente Virtual
 Isso impede que as bibliotecas do projeto entrem em conflito com o resto do seu computador.
@@ -45,14 +45,10 @@ No Linux/Mac: source venv/bin/activate
 
 ### 4. 📖 Instale as Bibliotecas Corretas
 Com o ambiente ativado, execute o comando abaixo. Ele instala exatamente as versões que se comunicam bem entre si para a ingestão de dados e orquestração de agentes:
-pip install langchain langchain-community langchain-huggingface langchain-chroma pypdf sentence-transformers chromadb langgraph
 
-5. Organize os Arquivos do Projeto
-Dentro da sua pasta principal, crie uma subpasta chamada dados_redes. Mova os 10 PDFs que você anexou aqui (DNS, Sockets, IP, etc.) para dentro dessa pasta dados_redes.
+```pip install langchain langchain-community langchain-huggingface langchain-chroma pypdf sentence-transformers chromadb langgraph```
 
-6. Recrie o Script de Ingestão
-Na pasta principal (fora de dados_redes), crie um arquivo chamado ingestao.py e cole o código que passei na mensagem anterior. Salve o arquivo.
-
-7. Execute a Ingestão
+7. Execute a Ingestão para Fomentar a Base de conhecimento
 No terminal, com o ambiente ainda ativado, rode:
-python ingestao.py
+```python ingestao.py```
+
