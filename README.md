@@ -7,7 +7,7 @@
      - Plataforma: Windows 11 Home
 
 --- 
-## Descrição do Problema 
+## 📐 Descrição do Problema 
 
 "Um aluno se depara com um prova de redes II com prazo próximo, sem muito tempo, ele precisa estudar todo o conteúdo da matéria de uma forma rápida e eficiente."
 
