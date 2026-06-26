@@ -65,11 +65,18 @@ No terminal, com o ambiente ainda ativado, rode: ```python ingestao.py```
 
 ---
 
-## 📜 Especificações dos Agente IA
+## 📜 Especificações dos Agente IA e justificativa de uso:
 
-- Agente 1 (Pesquisador): Ele recebe a dúvida do aluno, vai até a biblioteca (ChromaDB), lê os PDFs de Redes, extrai apenas os dados mais densos e técnicos e cria um "Resumo Técnico" (um dossiê).
-- Agente 2 (Professor): Ele não acessa os PDFs. Ele recebe o "Dossiê Técnico" do Pesquisador e tem a função exclusiva de traduzir aquele jargão técnico para uma explicação didática, fluida e com exemplos para o aluno.
-- Agente 3 (Revisor): Mantemos o nosso avaliador de qualidade no final.
+- Agente 1 (Pesquisador): Ele recebe a dúvida do aluno, vai até a base vetorial (ChromaDB), lê os PDFs da disciplina de Redes de Computadores, extrai apenas os dados mais densos e técnicos, e cria um "Dossiê Técnico".
+- Agente 2 (Professor): Ele não tem acesso direto aos PDFs. Ele recebe o "Dossiê Técnico" formulado pelo Pesquisador e tem a função exclusiva de traduzir aquele jargão técnico para uma explicação didática, fluida e com exemplos para o aluno.
+- Agente 3 (Revisor): Atua como o coordenador de qualidade (Quality Assurance) do sistema. Ele recebe a dúvida original do aluno e a resposta elaborada pelo Professor. Sua função é realizar uma avaliação crítica binária: se a resposta estiver clara, correta e livre de alucinações, ele a APROVA para o usuário final. Caso identifique falhas, jargões excessivos ou respostas incompletas, ele REJEITA o texto, forçando o Agente Professor a reescrever a explicação (com um limite de segurança de 3 tentativas para evitar loops infinitos).
+
+Por que esta arquitetura é adequada e superior a um agente único?A escolha da arquitetura em pipeline com três agentes especializados (Pesquisador → Professor → Revisor) foi adotada para resolver um dos problemas mais comuns em Modelos de Linguagem: a perda de foco e a alucinação ao lidar com múltiplas instruções complexas simultaneamente.Em uma abordagem de Agente Único, o LLM precisaria, em um mesmo prompt: interpretar a pergunta, buscar a informação em uma base de dados extensa, extrair os fatos técnicos, adequar o tom de voz para ser didático e revisar o próprio texto. Isso frequentemente gera respostas onde a didática sobrepõe a precisão técnica, ou onde o modelo simplesmente inventa informações (alucinação) para preencher lacunas, pois o contexto se torna ruidoso.
+
+Os ganhos da nossa Arquitetura Multiagente incluem:
+- Separação de Preocupações (Separation of Concerns): Cada agente possui um system prompt enxuto e hiperfocado. O Pesquisador é estritamente analítico e extrativo. O Professor é estritamente generativo e focado em pedagogia.
+- Prevenção de Alucinação (Groundedness): Como o Agente Professor não tem acesso ao mecanismo de busca global e é forçado a usar apenas o dossiê entregue pelo Pesquisador, a chance de inventar conceitos de redes de computadores que não estão na ementa da disciplina cai drasticamente.
+- Controle de Qualidade em Loop: A introdução do Agente Revisor cria um mecanismo de auto-correção (self-reflection). O sistema não entrega a primeira resposta gerada caso ela não atinja o padrão acadêmico exigido, algo impossível de garantir de forma confiável com uma execução de passo único (single-shot) por um único agente.
 
 ---
 
