@@ -6,6 +6,10 @@
 - Octávio Francisco Petry Bortoluzzi (188380)
      - Plataforma: Windows 11 Home
 
+--- 
+## Descrição do Problema
+"Um aluno se depara com um prova de redes II com prazo próximo, sem muito tempo, ele precisa estudar todo o conteúdo da matéria de uma forma rápida e eficiente"
+Neste contexto, entra o AcademicAgent como auxiliador de estudos (que neste contexto abrange apenas a matéria de redes II) que ajudara os usuários a revisar o conteudo, a corrigir e criar questões a fim de prepara-lo para a prova.
 ---
 
 ## ⚙️ Especificações do Projeto:
