@@ -2,7 +2,7 @@
 
 ## 👥 Integrantes
 - Artur Mesquita Jeager (188354)
-     - Plataforma: Linux → Ubuntu 24.04.2 LTS
+     - Plataforma: Linux → Mint 22.3 Zena
 - Octávio Francisco Petry Bortoluzzi (188380)
      - Plataforma: Windows 11 Home
 
