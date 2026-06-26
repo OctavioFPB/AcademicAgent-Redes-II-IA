@@ -17,12 +17,15 @@ Neste contexto, entra o AcademicAgent como um auxiliador de estudos, neste conte
 ---
 
 ## ⚙️ Especificações Técnicas do Projeto e Arquitetura:
+
 - LangChain: Framework para aplicações com LLMs
 - LangGraph: Orquestração de agentes
 - Ollama: Execução local de modelos LLaMA
 - ChromaDB: Banco de dados vetorial
 - Sentence Transformers: Geração de embeddings
 - Python 3.10+: Linguagem de programação
+
+--
 
 - Tools Disponíveis:
      - O sistema conta com uma ferramenta principal chamada buscar_documentos_redes. Ela é acionada exclusivamente pelo Agente Pesquisador e tem a função de receber uma string de busca (query), consultar o banco de dados vetorial local e retornar os trechos de texto mais relevantes (top-K) que contêm o jargão técnico necessário para responder à dúvida do usuário.
