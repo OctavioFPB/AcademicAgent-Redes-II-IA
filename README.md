@@ -24,16 +24,7 @@ Neste contexto, entra o AcademicAgent como um auxiliador de estudos, neste conte
 - Python 3.10+: Linguagem de programação
   
 ---
-## 📜 Papel de cada agente
 
-AcademicAgent possui 3 agentes:
-
-* 1.Pesquisador: responsável por realizar a pesquisa, relativa a pergunata, no banco de dados que repassa o conteúdo ao professor;
-* 2.Professor: responsável por transformar o conteudo do pesquisador em uma explicação;
-* 3.Revisor: responsável por revisar o conteudo do professor para conseratar imprecições e garantir a qualidadee acuricidade da explicação.
-
----
-ss
 
 ---
 
