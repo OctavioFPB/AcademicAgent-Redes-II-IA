@@ -1,10 +1,10 @@
-# AcademicAgent-Redes-II-IA
+# Multi-Agentes IA Acadêmico - Especialistas em Redes 
 
 ## 👥 Integrantes
 - Artur Mesquita Jeager (188354)
      - Plataforma: Linux → Mint 22.3 Zena
 - Octávio Francisco Petry Bortoluzzi (188380)
-     - Plataforma: Windows 11 Home
+     - Plataforma: Windows 11 Home Single Language (25H2)
 
 --- 
 ## 📐 Descrição do Problema & Objetivo da Solução
