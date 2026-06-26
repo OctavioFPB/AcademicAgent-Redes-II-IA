@@ -48,17 +48,12 @@ Com o ambiente ativado, execute o comando abaixo. Ele instala exatamente as vers
 
 ```pip install langchain langchain-community langchain-huggingface langchain-chroma pypdf sentence-transformers chromadb langgraph```
 
-OBS: Em caso de erro como esse (no Windows):
+*OBS: Em caso de erro como esse (no Windows):*
 
 **(venv) PS C:\Users\Octavuio\OneDrive\Área de Trabalho\Trabalho Final IA> pip install langchain langchain-community langchain-huggingface langchain-chroma pypdf sentence-transformers chromadb langgraph
 ERROR: Could not install packages due to an OSError: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Program Files\PostgreSQL\17\ssl\certs\ca-bundle.crt**
 
-Executar esses dois comando:
-
-```$env:CURL_CA_BUNDLE=""```
-```$env:REQUESTS_CA_BUNDLE=""```
-
-Rodar novamente o pip com as bibliotecas
+Executar esses dois comando ```$env:CURL_CA_BUNDLE=""``` e ```$env:REQUESTS_CA_BUNDLE=""```... Executar novamente o pip com as bibliotecas listadas anteriormente.
 
 ### ⚙️ 5. Execute a Ingestão para Fomentar a Base de conhecimento
 No terminal, com o ambiente ainda ativado, rode: ```python ingestao.py```
