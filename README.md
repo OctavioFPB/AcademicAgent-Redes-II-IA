@@ -5,6 +5,7 @@
      - Plataforma: Linux → Mint 22.3 Zena
 - Octávio Francisco Petry Bortoluzzi (188380)
      - Plataforma: Windows 11 Home Single Language (25H2)
+     - Terminal: PowerShell
 
 --- 
 ## 📐 Descrição do Problema & Objetivo da Solução
@@ -24,30 +25,30 @@ Neste contexto, entra o AcademicAgent como um auxiliador de estudos, neste conte
 - Python 3.10+: Linguagem de programação
 
 - Tools Disponíveis:
-O sistema conta com uma ferramenta principal chamada buscar_documentos_redes. Ela é acionada exclusivamente pelo Agente Pesquisador e tem a função de receber uma string de busca (query), consultar o banco de dados vetorial local e retornar os trechos de texto mais relevantes (top-K) que contêm o jargão técnico necessário para responder à dúvida do usuário.
+     - O sistema conta com uma ferramenta principal chamada buscar_documentos_redes. Ela é acionada exclusivamente pelo Agente Pesquisador e tem a função de receber uma string de busca (query), consultar o banco de dados vetorial local e retornar os trechos de texto mais relevantes (top-K) que contêm o jargão técnico necessário para responder à dúvida do usuário.
 
 - Explicação de como o MCP foi utilizado:
-Para padronizar o acesso a recursos externos, implementamos o Model Context Protocol (MCP) através de uma classe adaptadora local (AdaptadorMCP). O Agente Pesquisador não acessa o banco vetorial diretamente; em vez disso, ele envia uma requisição no formato padrão JSON-RPC 2.0 (método tools/call) para o adaptador. O adaptador executa a tool e devolve os dados formatados na árvore de resposta oficial do MCP (result -> content -> text), garantindo desacoplamento e segurança na execução da ferramenta.
+     - Para padronizar o acesso a recursos externos, implementamos o Model Context Protocol (MCP) através de uma classe adaptadora local (AdaptadorMCP). O Agente Pesquisador não acessa o banco vetorial diretamente; em vez disso, ele envia uma requisição no formato padrão JSON-RPC 2.0 (método tools/call) para o adaptador. O adaptador executa a tool e devolve os dados formatados na árvore de resposta oficial do MCP (result -> content -> text), garantindo desacoplamento e segurança na execução da ferramenta.
 
 - Explicação da estratégia de RAG (Retrieval-Augmented Generation):
-A estratégia de RAG foi dividida em duas etapas para evitar alucinações. Primeiro, quando o usuário faz uma pergunta, o Agente Pesquisador faz a recuperação (Retrieval) extraindo os dados técnicos brutos do banco vetorial, gerando um "Dossiê Técnico". Em seguida, ocorre a geração aumentada (Augmented Generation), onde o Agente Professor recebe apenas esse dossiê como contexto (sem acesso à base total ou a pesquisas web) e traduz o conteúdo para uma linguagem didática e formatada para o aluno.
+     - A estratégia de RAG foi dividida em duas etapas para evitar alucinações. Primeiro, quando o usuário faz uma pergunta, o Agente Pesquisador faz a recuperação (Retrieval) extraindo os dados técnicos brutos do banco vetorial, gerando um "Dossiê Técnico". Em seguida, ocorre a geração aumentada (Augmented Generation), onde o Agente Professor recebe apenas esse dossiê como contexto (sem acesso à base total ou a pesquisas web) e traduz o conteúdo para uma linguagem didática e formatada para o aluno.
 
 - Origem e natureza da base de conhecimento utilizada:
-A base de conhecimento é composta por materiais didáticos em formato PDF da disciplina de Redes de Computadores II. A natureza dos dados é estritamente acadêmica e técnica, cobrindo tópicos fundamentais da ementa, como: Arquitetura TCP/IP, DNS, Sockets, Protocolos UDP e TCP, Roteamento IP, ICMP e Cálculo de Sub-redes.
+     - A base de conhecimento é composta por materiais didáticos em formato PDF da disciplina de Redes de Computadores II. A natureza dos dados é estritamente acadêmica e técnica, cobrindo tópicos fundamentais da ementa, como: Arquitetura TCP/IP, DNS, Sockets, Protocolos UDP e TCP, Roteamento IP, ICMP e Cálculo de Sub-redes.
 
 - Tecnologia de embeddings e armazenamento vetorial adotados: 
-      - Embeddings: Utilizamos a biblioteca Sentence Transformers integrada via HuggingFaceEmbeddings, rodando o modelo leve e eficiente all-MiniLM-L6-v2. Ele converte os trechos de texto dos PDFs em vetores matemáticos com excelente captura de semântica.
-      - Armazenamento Vetorial: Adotamos o ChromaDB, executado de forma local e persistente. Ele armazena os embeddings e realiza a busca de contexto em frações de segundo utilizando o cálculo de similaridade de cosseno.
+           - Embeddings: Utilizamos a biblioteca Sentence Transformers integrada via HuggingFaceEmbeddings, rodando o modelo leve e eficiente all-MiniLM-L6-v2. Ele converte os trechos de texto dos PDFs em vetores matemáticos com excelente captura de semântica.
+           - Armazenamento Vetorial: Adotamos o ChromaDB, executado de forma local e persistente. Ele armazena os embeddings e realiza a busca de contexto em frações de segundo utilizando o cálculo de similaridade de cosseno.
 
 - Dependências do Projeto:
-Para replicar e rodar o projeto localmente, as seguintes tecnologias e bibliotecas são exigidas:
-     - Core: Python (3.10 ou superior) e Ollama (com o modelo llama3 baixado localmente).
-     - Bibliotecas Python (Instaláveis via pip):
-           - ```langgraph``` (Orquestração de agentes)
-           - ```langchain``` e ```langchain-ollama``` (Integração com LLM)
-           - ```langchain-chroma``` e ```chromadb``` (Banco vetorial local)
-           - ```langchain-huggingface``` e ```sentence-transformers``` (Geração de embeddings locais)
-           - ```pypdf``` (Leitura e extração de texto dos PDFs originais)
+     - Para replicar e rodar o projeto localmente, as seguintes tecnologias e bibliotecas são exigidas:
+          - Core: Python (3.10 ou superior) e Ollama (com o modelo llama3 baixado localmente).
+          - Bibliotecas Python (Instaláveis via pip):
+                - ```langgraph``` (Orquestração de agentes)
+                - ```langchain``` e ```langchain-ollama``` (Integração com LLM)
+                - ```langchain-chroma``` e ```chromadb``` (Banco vetorial local)
+                - ```langchain-huggingface``` e ```sentence-transformers``` (Geração de embeddings locais)
+                - ```pypdf``` (Leitura e extração de texto dos PDFs originais)
            
 ---
 
@@ -99,10 +100,10 @@ A escolha da arquitetura em pipeline com três agentes especializados (Pesquisad
 
 Os ganhos diretos da nossa Arquitetura Multiagente incluem:
 
-      - Separação de Preocupações (Separation of Concerns): Cada agente possui um system prompt enxuto e hiperfocado. O Pesquisador é estritamente analítico e extrativo. O Professor é estritamente generativo e focado em pedagogia.
-      - Prevenção de Alucinação (Groundedness): Como o Agente Professor não tem acesso ao mecanismo de busca global e é forçado a basear-se apenas no dossiê filtrado pelo Pesquisador, a chance de inventar conceitos de Redes de Computadores que não estão na ementa da disciplina cai drasticamente.
-      - Controle de Qualidade em Loop (Self-Reflection): A introdução do Agente Revisor cria um mecanismo de auto-correção. O sistema não entrega a primeira resposta gerada caso ela não atinja o padrão acadêmico exigido, algo impossível de garantir de forma confiável com uma execução de passo único (single-shot) por um único agente.
-      - Desacoplamento de Ferramentas via MCP: Ao obrigar o Pesquisador a solicitar os dados através do Model Context Protocol, separamos o raciocínio da IA da infraestrutura de banco de dados. Isso traz segurança e modularidade, permitindo escalar o sistema no futuro sem alterar a lógica cognitiva dos agentes.
+- Separação de Preocupações (Separation of Concerns): Cada agente possui um system prompt enxuto e hiperfocado. O Pesquisador é estritamente analítico e extrativo. O Professor é estritamente generativo e focado em pedagogia.
+- Prevenção de Alucinação (Groundedness): Como o Agente Professor não tem acesso ao mecanismo de busca global e é forçado a basear-se apenas no dossiê filtrado pelo Pesquisador, a chance de inventar conceitos de Redes de Computadores que não estão na ementa da disciplina cai drasticamente.
+- Controle de Qualidade em Loop (Self-Reflection): A introdução do Agente Revisor cria um mecanismo de auto-correção. O sistema não entrega a primeira resposta gerada caso ela não atinja o padrão acadêmico exigido, algo impossível de garantir de forma confiável com uma execução de passo único (single-shot) por um único agente.
+- Desacoplamento de Ferramentas via MCP: Ao obrigar o Pesquisador a solicitar os dados através do Model Context Protocol, separamos o raciocínio da IA da infraestrutura de banco de dados. Isso traz segurança e modularidade, permitindo escalar o sistema no futuro sem alterar a lógica cognitiva dos agentes.
 
 ---
 
