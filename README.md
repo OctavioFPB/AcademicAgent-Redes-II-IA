@@ -65,7 +65,7 @@ No terminal, com o ambiente ainda ativado, rode: ```python ingestao.py```
 
 ---
 
-## 📜 Especificações dos Agente IA e justificativa de uso:
+## 📜 Especificações dos Agentes IA e justificativa de uso:
 
 - Agente 1 (Pesquisador): Ele recebe a dúvida do aluno, vai até a base vetorial (ChromaDB), lê os PDFs da disciplina de Redes de Computadores, extrai apenas os dados mais densos e técnicos, e cria um "Dossiê Técnico".
 - Agente 2 (Professor): Ele não tem acesso direto aos PDFs. Ele recebe o "Dossiê Técnico" formulado pelo Pesquisador e tem a função exclusiva de traduzir aquele jargão técnico para uma explicação didática, fluida e com exemplos para o aluno.
