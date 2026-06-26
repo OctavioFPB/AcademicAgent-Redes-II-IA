@@ -15,7 +15,7 @@ Neste contexto, entra o AcademicAgent como um auxiliador de estudos, neste conte
 
 ---
 
-## ⚙️ Especificações do Técnicas do Projeto e Arquitetura:
+## ⚙️ Especificações Técnicas do Projeto e Arquitetura:
 - LangChain: Framework para aplicações com LLMs
 - LangGraph: Orquestração de agentes
 - Ollama: Execução local de modelos LLaMA
