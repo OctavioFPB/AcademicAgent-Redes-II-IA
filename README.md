@@ -57,7 +57,7 @@ ERROR: Could not install packages due to an OSError: Could not find a suitable T
 
 Executar esses dois comando ```$env:CURL_CA_BUNDLE=""``` e ```$env:REQUESTS_CA_BUNDLE=""```... Executar novamente o pip com as bibliotecas listadas anteriormente.
 
-### ⚙️ 5. Execução a
+### ⚙️ 5. Execução (Fomentação e Start do Assistente)
 
 1. No terminal, com o ambiente ainda ativado, executar o arquivo "ingestao.py" para Fomentar a base de conhecimento dos agentes, rode ```python ingestao.py```
 
