@@ -24,6 +24,12 @@ Neste contexto, entra o AcademicAgent como um auxiliador de estudos, neste conte
 - Python 3.10+: Linguagem de programação
   
 ---
+## 📜 Papel de cada agente
+
+AcademicAgent possui 3 a gentes
+
+
+---
 
 ## ✔️​ Requisitos
 - Hardware: Pelo menos 8GB de RAM (recomendado 16GB para rodar o modelo LLaMA localmente com folga).
