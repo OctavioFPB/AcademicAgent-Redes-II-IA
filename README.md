@@ -54,15 +54,18 @@ OBS: Em caso de erro como esse (no Windows):
 ERROR: Could not install packages due to an OSError: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Program Files\PostgreSQL\17\ssl\certs\ca-bundle.crt**
 
 Executar esses dois comando:
+
 ```$env:CURL_CA_BUNDLE=""```
 ```$env:REQUESTS_CA_BUNDLE=""```
 
-### 5. Execute a Ingestão para Fomentar a Base de conhecimento
+Rodar novamente o pip com as bibliotecas
+
+### ⚙️ 5. Execute a Ingestão para Fomentar a Base de conhecimento
 No terminal, com o ambiente ainda ativado, rode: ```python ingestao.py```
 
 ---
 
-## ⚙️ Especificações Técnicas do Projeto e Arquitetura:
+## 🛠️ Especificações Técnicas do Projeto e Arquitetura:
 
 - LangChain: Framework para aplicações com LLMs
 - LangGraph: Orquestração de agentes
