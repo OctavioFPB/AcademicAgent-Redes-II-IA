@@ -24,6 +24,14 @@ Neste contexto, entra o AcademicAgent como auxiliador de estudos (que neste cont
   
 ---
 
+## ✔️​ Requisitos
+- Hardware: Pelo menos 8GB de RAM (recomendado 16GB para rodar o modelo LLaMA localmente com folga).
+- Python: Versão 3.10, 3.11 ou 3.12 instalada (evite a versão 3.13 recém-lançada, pois muitas bibliotecas de IA ainda não são totalmente compatíveis).
+- Compilador C++ (Apenas Windows): O ChromaDB e outras bibliotecas matemáticas geralmente exigem o "Microsoft C++ Build Tools" instalado no Windows para compilar dependências.
+- Ollama: Instalado no sistema operacional para rodar o modelo local.
+
+---
+
 ## 🧪 Instruções de compilação/execução.
 ### 🦙 1. Instale o Ollama e Baixe o Modelo
 Baixe o instalador no site oficial (ollama.com). Após instalar, abra o terminal e faça o download do modelo que será o cérebro dos seus agentes:
