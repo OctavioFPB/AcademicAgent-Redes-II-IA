@@ -2,13 +2,13 @@
 
 ## Sumário
 - 👥  [Integrantes](https://github.com/OctavioFPB/AcademicAgent-Redes-II-IA/blob/main/README.md#-integrantes)
-- 📐  [Descrição do Problema & Objetivo da Solução]()
-- ✔️​  [Requisitos]()
-- 🧪  [Instruções de compilação/execução.]()
-- 🛠️  [Especificações Técnicas do Projeto e Arquitetura:]()
-- 🤖  [Papéis dos Agentes na Arquitetura]()
-- 📜  [Justificativa: Por que esta arquitetura é superior a um Agente Único?]()
-- 🎯  [Exemplos de Execução]()
+- 📐  [Descrição do Problema & Objetivo da Solução](https://github.com/OctavioFPB/AcademicAgent-Redes-II-IA/blob/main/README.md#-descri%C3%A7%C3%A3o-do-problema--objetivo-da-solu%C3%A7%C3%A3o)
+- ✔️​  [Requisitos](https://github.com/OctavioFPB/AcademicAgent-Redes-II-IA/blob/main/README.md#%EF%B8%8F-requisitos)
+- 🧪  [Instruções de compilação/execução.](https://github.com/OctavioFPB/AcademicAgent-Redes-II-IA/blob/main/README.md#-instru%C3%A7%C3%B5es-de-compila%C3%A7%C3%A3oexecu%C3%A7%C3%A3o)
+- 🛠️  [Especificações Técnicas do Projeto e Arquitetura:](https://github.com/OctavioFPB/AcademicAgent-Redes-II-IA/blob/main/README.md#%EF%B8%8F-especifica%C3%A7%C3%B5es-t%C3%A9cnicas-do-projeto-e-arquitetura)
+- 🤖  [Papéis dos Agentes na Arquitetura](https://github.com/OctavioFPB/AcademicAgent-Redes-II-IA/blob/main/README.md#-pap%C3%A9is-dos-agentes-na-arquitetura)
+- 📜  [Justificativa: Por que esta arquitetura é superior a um Agente Único?](https://github.com/OctavioFPB/AcademicAgent-Redes-II-IA/blob/main/README.md#-justificativa-por-que-esta-arquitetura-%C3%A9-superior-a-um-agente-%C3%BAnico)
+- 🎯  [Exemplos de Execução](https://github.com/OctavioFPB/AcademicAgent-Redes-II-IA/blob/main/README.md#-exemplos-de-execu%C3%A7%C3%A3o)
 
 ## 👥 Integrantes
 - Artur Mesquita Jeager (188354)
