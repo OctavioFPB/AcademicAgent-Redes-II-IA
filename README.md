@@ -59,9 +59,11 @@ Executar esses dois comando ```$env:CURL_CA_BUNDLE=""``` e ```$env:REQUESTS_CA_B
 
 ### ⚙️ 5. Execução (Fomentação e Start do Assistente)
 
-1. No terminal, com o ambiente ainda ativado, executar o arquivo "ingestao.py" para Fomentar a base de conhecimento dos agentes, rode ```python ingestao.py```
+1. No terminal, com o ambiente ainda ativado, executar o arquivo "*ingestao.py*" para Fomentar a base de conhecimento dos agentes, rode ```python ingestao.py```
 
-2. Após conclusão, ainda no terminal, vamos ativar os agentes e utiliza-los, vamos executar o arquivo "assistente.py", rode ```python assistente.py```.
+     - Para melhor aproveitamento do conhecimento posto, deixamos a disposição outra pasta com dois arquivos PDF de alto valor:  "*Mais aquivos de fomentação.zip*"
+
+2. Após conclusão, ainda no terminal, vamos ativar os agentes e utiliza-los, vamos executar o arquivo "*assistente.py*", rode ```python assistente.py```.
      
      - Caso ocorra algum erro, no seu terminal (com o (venv) ativado, exatamente onde você está), tente rodar o seguinte comando para baixar a biblioteca: ```pip install langchain-ollama```
    
