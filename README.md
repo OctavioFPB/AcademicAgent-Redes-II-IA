@@ -26,8 +26,11 @@ Neste contexto, entra o AcademicAgent como um auxiliador de estudos, neste conte
 ---
 ## 📜 Papel de cada agente
 
-AcademicAgent possui 3 a gentes
+AcademicAgent possui 3 agentes:
 
+1.Pesquisador: responsável por fazer a pesquisa, relativa a pergunata, no banco de dados que repassa o conteúdo ao professor
+2.Professor: responsável por transformar o conteudo do pesquisador em uma explicação
+3.Revisor: responsavel por revisar o conteudo do professor para conseratar imprecições e garantir a qualidadee acuricidade da explicação.
 
 ---
 
