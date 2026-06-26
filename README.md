@@ -63,8 +63,8 @@ Com o ambiente ativado, execute o comando abaixo. Ele instala exatamente as vers
 
 ```pip install langchain langchain-community langchain-huggingface langchain-chroma pypdf sentence-transformers chromadb langgraph```
 
-7. Execute a Ingestão para Fomentar a Base de conhecimento
-No terminal, com o ambiente ainda ativado, rode:
+### 7. Execute a Ingestão para Fomentar a Base de conhecimento
+No terminal, com o ambiente ainda ativado, rode: ```python ingestao.py```
 
 ---
 
@@ -79,28 +79,24 @@ No terminal, com o ambiente ainda ativado, rode:
 ## 🎯 Exemplos de Execução
 
 ```
-==================================================
-
 Qual a sua dúvida de Redes?
-> Se o servidor DNS parar, o que acontece com a empresa?
+> Quantas etapas tem um processo de Handshake
 
-[Agente Recuperador] Buscando materiais na base de Redes II...
-[Agente Redator] Escrevendo a explicação...
-[Agente Revisor] Avaliando a qualidade da resposta...
+[Agente 1: Pesquisador] Vasculhando os PDFs e criando um dossiê técnico...
+[Agente 2: Professor] Transformando o dossiê em uma explicação didática...
+[Agente 3: Revisor] Avaliando se a aula está boa...
 
 ==================================================
 RESPOSTA FINAL:
-Excelente pergunta!
+Muito bem! Vamos explorar o processo de Handshake juntos!
 
-Se o servidor DNS parar, a empresa pode enfrentar graves problemas para manter sua infraestrutura online. Aqui estão algumas consequências:
+De acordo com o dossiê técnico, o processo de Handshake tem 3 etapas:
 
-1. **Impossibilidade de acesso**: Sem um servidor DNS funcionando corretamente, os usuários não poderão mais acessar os sites da empresa ou seus serviços online.
-2. **Desenvolvimento de erros**: Os aplicativos e sistemas que dependem do DNS para resolver nomes de domínios começarão a apresentar erros e falhas, o que pode levar à perda de dados e tempo de inatividade.
-3. **Problemas de comunicação**: A impossibilidade de resolução de nomes de domínios impede a comunicação entre os servidores da empresa e seus clientes, levando a problemas de entrega de emails, mensagens instantâneas e outros serviços online.
-4. **Perda de reputação**: Uma falha prolongada no servidor DNS pode levar à perda de confiança dos clientes e parceiros, o que pode afetar negativamente a imagem da empresa.
+1. **Sincronização**: O cliente envia um pacote SYN (synchronize) ao servidor.
+2. **Resposta do Servidor**: O servidor responde com um pacote SYN-ACK (synchronize-acknowledgment).
+3. **Confirmação**: O cliente confirma a conexão com um pacote ACK (acknowledgment).
 
-Para minimizar esses riscos, é fundamental implementar estratégias de backup e recuperação para garantir a continuidade do serviço DNS. Isso pode incluir a manutenção de servidores DNS redundantes, a configuração de caching e a realização de backups regulares dos dados do servidor DNS. Além disso, é importante ter um plano de contingência em caso de falha para minimizar os danos e garantir a recuperação rápida do serviço.
+Essas 3 etapas são essenciais para estabelecer uma conexão segura e eficaz entre o cliente e o servidor. E agora, você tem uma ideia clara sobre como funciona o Handshake!
 ==================================================
 ```
-```python ingestao.py```
 
