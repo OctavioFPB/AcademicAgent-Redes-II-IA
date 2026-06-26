@@ -80,7 +80,7 @@ Executar esses dois comando ```$env:CURL_CA_BUNDLE=""``` e ```$env:REQUESTS_CA_B
 - MCP (Model Context Protocol): Padrão arquitetural (via JSON-RPC) utilizado para desacoplar e padronizar a comunicação entre os agentes e as ferramentas de busca.
 - Python 3.10+: Linguagem base de desenvolvimento.
 
-------
+-----
 
 - Tools Disponíveis:
      - O sistema conta com uma ferramenta principal chamada buscar_documentos_redes. Ela é acionada exclusivamente pelo Agente Pesquisador e tem a função de receber uma string de busca (query), consultar o banco de dados vetorial local e retornar os trechos de texto mais relevantes (top-K) que contêm o jargão técnico necessário para responder à dúvida do usuário.
