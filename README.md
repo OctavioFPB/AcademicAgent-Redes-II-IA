@@ -30,7 +30,7 @@ Baixe o instalador no site oficial (ollama.com). Após instalar, abra o terminal
 ```ollama pull llama3```
 
 ### 📂 2. Estrutura de Pastas
-Baixe a pasta principal do trabalho final anexada no repositório. Abra o terminal dentro dessa nova pasta.
+Baixe a pasta principal "Trabalho final IA" anexada no repositório. Abra o terminal dentro dessa nova pasta.
 
 ### 👾 3. Crie e Ative o Ambiente Virtual
 Isso impede que as bibliotecas do projeto entrem em conflito com o resto do seu computador.
