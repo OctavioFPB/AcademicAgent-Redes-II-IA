@@ -95,8 +95,8 @@ Executar esses dois comando ```$env:CURL_CA_BUNDLE=""``` e ```$env:REQUESTS_CA_B
      - A base de conhecimento é composta por materiais didáticos em formato PDF da disciplina de Redes de Computadores II. A natureza dos dados é estritamente acadêmica e técnica, cobrindo tópicos fundamentais da ementa, como: Arquitetura TCP/IP, DNS, Sockets, Protocolos UDP e TCP, Roteamento IP, ICMP e Cálculo de Sub-redes.
 
 - Tecnologia de embeddings e armazenamento vetorial adotados: 
-           - Embeddings: Utilizamos a biblioteca Sentence Transformers integrada via HuggingFaceEmbeddings, rodando o modelo leve e eficiente all-MiniLM-L6-v2. Ele converte os trechos de texto dos PDFs em vetores matemáticos com excelente captura de semântica.
-           - Armazenamento Vetorial: Adotamos o ChromaDB, executado de forma local e persistente. Ele armazena os embeddings e realiza a busca de contexto em frações de segundo utilizando o cálculo de similaridade de cosseno.
+     - Embeddings: Utilizamos a biblioteca Sentence Transformers integrada via HuggingFaceEmbeddings, rodando o modelo leve e eficiente all-MiniLM-L6-v2. Ele converte os trechos de texto dos PDFs em vetores matemáticos com excelente captura de semântica.
+     - Armazenamento Vetorial: Adotamos o ChromaDB, executado de forma local e persistente. Ele armazena os embeddings e realiza a busca de contexto em frações de segundo utilizando o cálculo de similaridade de cosseno.
 
 - Dependências do Projeto:
      - Para replicar e rodar o projeto localmente, as seguintes tecnologias e bibliotecas são exigidas:
@@ -119,7 +119,7 @@ Executar esses dois comando ```$env:CURL_CA_BUNDLE=""``` e ```$env:REQUESTS_CA_B
 
 ## 📜 Justificativa: Por que esta arquitetura é superior a um Agente Único?
 
-A escolha da arquitetura em pipeline com três agentes especializados (Pesquisador $\rightarrow$ Professor $\rightarrow$ Revisor) foi adotada para resolver um dos problemas mais comuns em Modelos de Linguagem: a perda de foco e a alucinação ao lidar com múltiplas instruções complexas simultaneamente.Em uma abordagem de Agente Único, o LLM precisaria, em um mesmo prompt: interpretar a pergunta, acionar as ferramentas de busca em uma base de dados extensa, extrair os fatos técnicos, adequar o tom de voz para ser didático e revisar o próprio texto. Isso frequentemente gera respostas onde a didática sobrepõe a precisão técnica, ou onde o modelo simplesmente inventa informações (alucinação) para preencher lacunas de contexto ruidoso.
+A escolha da arquitetura em pipeline com três agentes especializados (Pesquisador $\rightarrow$ Professor $\rightarrow$ Revisor) foi adotada para resolver um dos problemas mais comuns em Modelos de Linguagem: a perda de foco e a alucinação ao lidar com múltiplas instruções complexas simultaneamente. Em uma abordagem de Agente Único, o LLM precisaria, em um mesmo prompt: interpretar a pergunta, acionar as ferramentas de busca em uma base de dados extensa, extrair os fatos técnicos, adequar o tom de voz para ser didático e revisar o próprio texto. Isso frequentemente gera respostas onde a didática sobrepõe a precisão técnica, ou onde o modelo simplesmente inventa informações (alucinação) para preencher lacunas de contexto ruidoso.
 
 Os ganhos diretos da nossa Arquitetura Multiagente incluem:
 
